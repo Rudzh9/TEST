@@ -8,8 +8,7 @@ Let's make a game!
 
 //KYS WHO EVER WORKS AT PASTEBIN
 //GET C WHO EVER WORKS AT GITHUB U INCOMPETENT CRIPPLES
-//KYS HANDLESS PISSLOW MAGGOTS BRAINDEAD SHITSTAINS
-
+//KYS TRANOIDS
 
 //Things yet to add:
 //how to show current yield from a specific building
@@ -356,74 +355,74 @@ Buildings
 //can produce also salt/deuterium
 		desc:Don't let Nestle know about this.<//><b>Effect:</b><.>Produces 65000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2distillatory.png
-		cost:1.4E+13 water
+		cost:14000000000000 water
 		on tick:yield 65000000 water
 		on tick:yield 1 deuterium
-		req:1.4E+13 water:earned and independenceDay
+		req:14000000000000 water:earned and independenceDay
 	*iceberg|icebergs
 		name:Iceberg|Icebergs
 		desc:Didn't we expell them already? Oh, it's Iceberg, not Ice(((berg)))..<//><b>Effect:</b><.>Produces 430000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2iceberg.png
-		cost:1.7E+14 water
+		cost:170000000000000 water
 		on tick:yield 430000000 water
 //yield ice
-		req:1.7E+14 water:earned and shipyard
+		req:170000000000000  water:earned and shipyard
 	*geyser|geysers
 		name:Geyser|Geysers
 		desc:<//><b>Effect:</b><.>Produces 2900000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2geyser.png
-		cost:2.1E+15 water
+		cost:2100000000000000 water
 		on tick:yield 2900000000 water
-		req:2.1E+15 water:earned
+		req:2100000000000000 water:earned
 	*icyMountain|icyMountains
 		name:Icy Mountain|Icy Mountains
 		desc:Turns out we never needed to dig anywhere. It's always been right there on the top.<//><b>Effect:</b><.>Produces 21000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2icymountains.png
-		cost:2.6E+16 water
+		cost:26000000000000000 water
 		on tick:yield 21000000000 water
-		req:2.6E+16 water:earned and mountains
+		req:26000000000000000 water:earned and mountains
 	*waterMine|waterMines
 		name:Water Mine|Water Mines
 		desc:Not as rich as the ones of Moria.<//><b>Effect:</b><.>Produces 150000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2water-mines.png
-		cost:3.1E+17 water
+		cost:310000000000000000 water
 		on tick:yield 150000000000 water
-		req:3.1E+17 water:earned and expertTools
+		req:310000000000000000 water:earned and expertTools
 	*ocean|oceans
 		name:Ocean|Oceans
 		desc:Turns out Seas have parents too.<//><b>Effect:</b><.>Produces 1100000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2ocean.png
-		cost:7.1E+19 water
+		cost:71000000000000000000 water
 		on tick:yield 1100000000000 water
-		req:7.1E+19 water:earned and shipyard
+		req:71000000000000000000 water:earned and shipyard
 	*schoolOfWaterMagic|schoolsOfWaterMagic
 		name:School of Water Magic|Schools of Water Magic
 		desc:What better of a way can there be to obtain water than being able to call it forth at will?<//><b>Effect:</b><.>Produces 8300000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2schoolofwatermagic.png
-		cost:1.2E+21 water, 18 ambrosia
+		cost:1200000000000000000000 water, 18 ambrosia
 		on tick:yield 8300000000000 water
 		on tick:if (have moonWell) yield 1 ambrosia
-		req:1.2E+21 water:earned
+		req:1200000000000000000000 water:earned
 	*comet|comets
 		name:Comet|Comets
 		desc:<//><b>Effect:</b><.>Produces 64000000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2comet.png
-		cost:1,9E+23 water
+		cost:190000000000000000000000 water
 		on tick:yield 64000000000000 water
-		req:1,9E+23 water:earned
+		req:190000000000000000000000 water:earned
 	*tears
 		name:Tears
 		desc:<//><b>Effect:</b><.>Produces 510000000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2tears.png
-		cost:5.4E+25
+		cost:54000000000000000000000000
 		on tick:yield 510000000000000 water
-		req:5.4E+25 water:earned
+		req:54000000000000000000000000 water:earned
 	*atlantis
 		name:Atlantis
 		text:Atlantis ([this]%)
 		desc:The city of our collective ancestors. Little is known about it nowadays, but one thing's for sure - there's water everywhere! <//><b>The Atlantis is [this]% complete.</b>
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2atlantis.png
-		cost:9.0E+27 water, 1000 ambrosia
+		cost:9000000000000000000000000000 water, 1000 ambrosia
 		req:2480000000000000 water:earned and underwaterRuins
 		limit:100
 		cost increase:105%
