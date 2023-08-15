@@ -1,0 +1,849 @@
+Let's make a game!
+	name:Freaky Planters
+	by:heisendolf
+	desc:Grow stronger with the help of various different fruit of the world and defeat the Big Food! <//> The plan: Water acquisition -> Buildings that let you get more water -> Grow fruit trees that yield different fruit -> Hire warriors and feed them fruit to make them strong enough to beat subhumans that hypnotize people into feeding themselves junkfood till their grave! >:C
+	created:09/08/2023
+	updated:11/08/2023
+	version:0.0.0.1
+
+//Things yet to add:
+//how to show current yield from a specific building
+//Enemies?
+//Items
+//Main Character
+//Skills
+//Spells
+
+
+CSS
+	#game.on
+{
+	background-size: 100% 100%;
+	image-rendering: pixelated;
+}
+
+	#game
+{
+    background:cornflowerblue;
+    font-family:"Times New Roman",Times,serif;
+    color:lightgray;
+}
+
+	.thing
+{
+    text-shadow:1px 1px 0 black;
+    border-radius:8px;
+    background:rgba(255,255,255,0.5);
+}
+	.thing-icon,.particle
+{
+    width:64px;
+    height:64px;
+}
+	#game.filtersOn .thing.cantAfford.notOwned
+{
+    filter:blur(3px);
+}
+
+
+Settings	
+	background:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/TEST/eden
+	//the default: (will need to edit to look better) stylesheet:stuff/bigBlue.css
+
+	building cost increase:115%
+	building cost refund:69%
+	//no particles / no bulk particles
+	//spritesheet:Name, X by Y, url.jpg - none yet
+	stylesheet:stuff/bigBlue.css
+
+Layout
+	use default
+
+/*Layout // will have to work on the positioning
+	*main
+		contains:res, buttons
+		*res
+			contains:Resources
+			class:fullWidth
+			header:These are your resources.
+		*buttons
+			contains:Buttons
+	*buildings
+		contains:Buildings
+		header:These are things you can build.
+		tooltip origin:left
+	*store
+		*inventory
+			contains:Items
+			header:Inventory
+		*unlockables
+			contains:Upgrades
+			names:hide
+	*dex
+		contains:Achievements
+	blessings, ...	*/
+
+Buttons
+	*waterButton
+		name:Get some water
+		desc:Click this fountain to get some water!
+		on click:anim icon wobble
+		on click:yield 1 water
+		on click:if (have midasTouch and chance(5%)) yield 1 ambrosia
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/TEST/fountain-256.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		//tooltip class:blue
+Resources
+
+//primary/currency
+	*water
+		name:Water
+		desc:Pure water.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/0/0water-drop.png
+		class:noBackground
+		show earned
+	*ambrosia
+		name:Nectar of the Gods
+		desc:The liquid of the gods!
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/0/0nectarofthegods.png
+		class:noBackground
+		hidden when 0
+	*deuterium
+		name:Deuterium
+		desc:Ugh.. water?
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/0/0deuterium.png
+		class:noBackground
+		hidden when 0
+
+//fruit
+	*apple|apples
+		name:Apple|Apples
+		desc:Fauci repellant.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1apple.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*strawberry|strawberries
+		name:Strawberry|Strawberries
+		desc:0% straws.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1strawberry.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*pear|pears
+		name:Pear|Pears
+		desc:Probably more than just a pair.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1pears.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*cherry|cherries
+		name:Cherry|Cherries
+		desc:Definitely at least a pair.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1cherry.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*pomegranate|pomegranates
+		name:Pomegranate|Pomegranates
+		desc:Leave it ripen for long enough and indeed it might explode.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1pomegranate.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*grape|grapes
+		name:Grape|Grapes
+		desc:A lot more than just a pair.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1grape.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*banana|bananas
+		name:Banana|Bananas
+		desc:The currency for Monkey Diplomacy.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1banana.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*watermelon|watermelons
+		name:Watermelon|Watermelons
+		desc:Full of water that can't be used for water purposes.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1watermelon.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*lemon|lemons
+		name:Lemon|Lemons
+		desc:In this life, you'll have to grow them yourself.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1lemon.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*orange|oranges
+		name:Orange|Oranges
+		desc:The better lemons.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1orange.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*coconut|coconuts
+		name:Coconut|Coconuts
+		desc:The only pieces of clothes you'll find here.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1coconut.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*mango|mangoes
+		name:Mango|Mangoes
+		desc:Would recover mana too, if you had any.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1mango.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*papaya|papayas
+		name:Papaya|Papayas
+		desc:The dad of the fruits.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1papaya.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*pineapple|pineapples
+		name:Pineapple|Pineapples
+		desc:Somehow nothing to do with either pines or apples.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1pineapple.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+	*nectarine|nectarines
+		name:Nectarine|Nectarines
+		desc:Almost as good as the Food of the Gods.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/1/1nectarine.png
+		class:noBackground
+		tags:fruit
+		hidden when 0
+
+
+Shinies 
+//no idea what stuff does here for most part for now, p much just copy pasted from the bunny one
+	*rain
+		on click:log Woop
+		movement:onRight moveLeft fade bounce:0.05
+		frequency:60
+		frequency variation:30
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/0/0rain.png
+		class:bigButton
+		on click:
+			$boost=1
+			if (have clover) $boost=4
+			if (chance(25%))
+				//get at least 7, or between 1 and 3 minutes of our water production
+				$amount=max(7,random(water:ps*60*1,water:ps*60*3))*$boost
+				toast The rain water grants you:<//><b>[$amount] water</b>.
+				yield $amount water
+			else
+				$amount=1*$boost
+				toast The rain grants you<//><b>[$amount] Nectar of God[s?$amount]</b>!
+				yield $amount ambrosia
+			end
+		end
+
+
+Buildings
+//how to modify sell price for a particular building? (for example, buying a fountain could cost water, but destroying(selling) it could give back some materials
+//how to divide them into multiple types (water acquisition/trees/chemistry equipment/etc.)
+//1000000 - million, 1000000000 - billion, 1000000000000 - trillion, 1000000000000000 - quadrillion, 1000000000000000000 - quintillion, 1000000000000000000000 - sixtillion, 1000000000000000000000000 - septillion)
+
+	*TEMPLATE
+		on click:anim glow
+
+//0 - WATER ACQUISITION
+
+	*fountain|fountains
+		name:Fountain|Fountains
+		desc:The fountain where everything starts. In case you die, here's where you'll be born again. Installing more of these around your ground will inevitably create spillages onto the nearby ground and will moisturize the air, healing both the Earth around you, and you yourself, too.<//><b>Effect:</b><.>Produces 1 water every 10 seconds and increases click strenght by 0.1.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2fountain.png
+		cost:1 water
+		on tick:yield 0.1 water
+		passive:increase water yield of waterButton by 0.1
+		unlocked
+	*puddle|puddles
+		name:Puddle|Puddles
+		desc:Usually appears from spillages of fountains. Just don't use a straw.<//><b>Effect:</b><.>Produces 1 water every 2 seconds.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2puddle.png
+		cost:15 water
+		on tick:yield 0.5 water
+		req:9 water:earned
+	*rainCollector|rainCollectors
+		name:Rain Collector|Rain Collectors
+		desc:Technically fountains do this too, but would be a weird design having those on the roof. It doesn't catch everything, but hey, at least you'll have to water less.<//><b>Effect:</b><.>Produces 1 water every second.<//><i>"Has anyone ever seen Anyone climb into Heaven and take charge? grab the winds and control them? gather the rains in his bucket? stake out the ends of the earth? Just tell me his name, tell me the names of his sons. Come on now - tell me!" - Proverbs 30:4</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2raincollector.png
+		cost:100 water
+		on tick:yield 1 water
+		req:69 water:earned and basicTools
+	*aqueduct|aqueducts
+		name:Aqueduct|Aqueducts
+		desc:A real-life dot-connector of all of your fountains and other estates. Technically doesn't make you more water in and of itself but by allowing it to be more efficiently transported, allows your other buildings work more without overflowing so often.<//><b>Effect:</b><.>Produces 8 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2pipes.png
+		cost:1100 water
+		on tick:yield 8 water
+		req:699 water:earned and spadeTools
+	*pond|ponds
+		name:Pond|Ponds
+		desc:Why build if you can just make a hole into the ground. Relax, noone said anything about digging.<//><b>Effect:</b><.>Produces 48 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2pond.png
+		cost:12000 water
+		on tick:yield 48 water
+		req:6969 water:earned
+	*well|wells
+		name:Well|Wells
+		desc:Be careful to not ruin your pipes when making these.<//><b>Effect:</b><.>Produces 269 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2well.png
+		cost:130000 water
+		on tick:yield 269 water
+		req:69696 water:earned and groundwaterWays
+	*lake|lakes
+		name:Lake|Lakes
+		desc:Well, it doesn't have sharks in it..<//><b>Effect:</b><.>Produces 1368 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2lake.png
+		cost:1400000 water
+		on tick:yield 1368 water
+		req:696969 water:earned and independenceDay
+	*groundwater|Groundwater
+		name:Groundwater|Groundwater
+		desc:Wait, I thought there's Lava underneath the crust?<//><b>Effect:</b><.>Produces 7800 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2groundwater.png
+		cost:20000000 water
+		on tick:yield 7800 water
+		req:1331100 water:earned and groundwaterWays
+	*waterfall|waterfalls
+		name:Waterfall|Waterfalls
+		desc:Better than the tubes in the aquaparks.<//><b>Effect:</b><.>Produces 44100 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2waterfall.png
+		cost:330000000 water
+		on tick:yield 44100 water
+		req:248000000 water:earned and independenceDay
+	*seaWaterDistillery|seaWaterDistilleries
+		name:Sea Water Distillery|Sea Water Distilleries
+//can produce also salt/deuterium
+		desc:Don't let Nestle know about this.<//><b>Effect:</b><.>Produces 270000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2distillatory.png
+		cost:5100000000 water
+		on tick:yield 270000 water
+		on tick:yield 1 deuterium
+		req:690000000 water:earned and independenceDay
+	*iceberg|icebergs
+		name:Iceberg|Icebergs
+		desc:Didn't we expell them already? Oh, it's Iceberg, not Ice(((berg)))..<//><b>Effect:</b><.>Produces 1800000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2iceberg.png
+		cost:75000000000 water
+		on tick:yield 1800000 water
+//yield ice
+		req:2480000000 water:earned and shipyard
+	*icyMountain|icyMountains
+		name:Icy Mountain|Icy Mountains
+		desc:Turns out we never needed to dig anywhere. It's right there on the top.<//><b>Effect:</b><.>Produces 10000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2icymountains.png
+		cost:1000000000000 water
+		on tick:yield 10000000 water
+		req:24800000000 water:earned and mountains
+	*waterMine|waterMines
+		name:Water Mine|Water Mines
+		desc:Not as rich as the ones of Moria.<//><b>Effect:</b><.>Produces 65000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2water-mines.png
+		cost:14000000000000 water
+		on tick:yield 65000000 water
+		req:1000000000000 water:earned and expertTools
+	*ocean|oceans
+		name:Ocean|Oceans
+		desc:Turns out Seas have parents too.<//><b>Effect:</b><.>Produces 430000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2ocean.png
+		cost:170000000000000 water
+		on tick:yield 430000000 water
+		req:2480000000000 water:earned and shipyard
+	*schoolOfWaterMagic|schoolsOfWaterMagic
+		name:School of Water Magic|Schools of Water Magic
+		desc:What better of a way can there be to obtain water than being able to call it forth at will?<//><b>Effect:</b><.>Produces 2900000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2schoolofwatermagic.png
+		cost:2100000000000000 water, 18 ambrosia
+		on tick:yield 2900000000 water
+		on tick:if (have moonWell) yield 1 ambrosia
+		req:24800000000000 water:earned and moonWell
+	*atlantis
+		name:Atlantis
+		text:Atlantis ([this]%)
+		desc:The city of our collective ancestors. Little is known about it nowadays, but one thing's for sure - there's water everywhere! <//><b>The Atlantis is [this]% complete.</b>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2atlantis.png
+		cost:26000000000000000 water, 1000 ambrosia
+		req:2480000000000000 water:earned and underwaterRuins
+		limit:100
+		cost increase:105%
+
+//1 - TREES OF THE FRUIT
+//adjust + add rates to desc
+
+	*appleTree|appleTrees
+		name:Apple Tree|Apple Trees
+		desc:An apple a day, keeps a subhuman at bay. Plant one of these, and you'll be safe for years.<//><b>Effect:</b><.>Produces 1 apple every 100 seconds.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3apple-tree.png
+		cost:1000 water, 1 ambrosia
+		on tick:yield 0.01 apples
+		req:treeUpgrade0
+		cost increase:105%
+	*strawberryPlant|strawberryPlants
+		name:Strawberry Plant|Strawberry Plants
+		desc:No need to pull any straws to get the loot.<//><b>Effect:</b><.>Produces 1 strawberry every 40 seconds.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3strawberryplant.png
+		cost:2500 water, 2 ambrosia, 100 apples
+		on tick:yield 0.025 strawberries
+		req:3 apples:earned
+	*pearTree|pearTrees
+		name:Pear Tree|Pear Trees
+		desc:Thicc-apple trees.<//><b>Effect:</b><.>Produces 1 pear every 2 seconds.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3pear-tree.png
+		cost:10000 water, 5 ambrosia, 2500 apples, 750 strawberries
+		on tick:yield 0.05 pears
+		req:500 strawberries:earned
+	*cherryTree|cherryTrees
+		name:Cherry Tree|Cherry Trees
+		desc:Cherry tree in Eastern europe: ¯\_(ツ)_/¯<//>Cherry tree in Japan: \Ö/ <//><b>Effect:</b><.>Produces 2 cherries every 10 seconds.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3cherry-tree.png
+		cost:16900 water, 8 ambrosia, 7200 apples, 3690 strawberries, 690 pears
+		on tick:yield 0.2 cherries
+		req:500 pears:earned
+	*pomegranateTree|pomegranateTrees
+		name:Pomegranate Tree|Pomegranate Trees
+		desc:Rumored to be the actual original tree of knowledge. I could buy that considering it's fruit actually taste good, unlike apples.<//><b>Effect:</b><.>Produces 1 pomegranate every second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3pomegranate-tree.png
+		cost:36900 water, 12 ambrosia, 16900 apples, 6900 strawberries, 1800 pears, 690 cherries
+		on tick:yield 1 pomegranates
+		req:500 cherries:earned
+	*grapevine|grapevines
+		name:Grapevine|Grapevine
+		desc:Stop complaining about the seeds, the seedless ones make you seedless yourself.<//><b>Effect:</b><.>Produces 10 grapes per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3grapevine.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates
+		on tick:yield 10 grapes
+		req:500 cherries:earned
+	*watermelonPlant|watermelonPlants
+		name:Watermelon Plant|Watermelon Plants
+		desc:Bigger than the elven melons.<//><b>Effect:</b><.>Produces 69 watermelons per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3watermelon-plant.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes
+		on tick:yield 18 watermelons
+		req:500 grapes:earned
+	*lemonTree|lemonTrees
+		name:Lemon Tree|Lemon Trees
+		desc:So this is where life gets them from.<//><b>Effect:</b><.>Produces 69 lemons per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3lemon-tree.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes, 500 watermelons
+		on tick:yield 27 lemons
+		req:500 watermelons:earned
+	*orangeTree|orangeTree
+		name:Orange Tree|Orange Trees
+		desc:Congratulations on surviving without getting scurvy so far!<//><b>Effect:</b><.>Produces 69 oranges per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3orange-tree.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes, 500 watermelons, 500 lemons
+		on tick:yield 36 oranges
+		req:500 lemons:earned
+	*bananaTree|bananaTree
+		name:Banana Tree|Banana Trees
+		desc:Fruit always come in at least pairs, unlike pears.<//><b>Effect:</b><.>Produces 18 bananas per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3banana-tree.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes, 500 watermelons, 500 lemons, 500 oranges
+		on tick:yield 69 bananas
+		req:500 oranges:earned and independenceDay
+	*coconutPalm|coconutPalms
+		name:Coconut Palm|Coconut Palms
+		desc:I'm in love with the Coco water. Finally I can stop drinking from the puddles and also hide my eyes from the elven melons.<//><b>Effect:</b><.>Produces 69 coconuts per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3coconut-palm.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes, 500 watermelons, 500 lemons, 500 oranges, 500 bananas
+		on tick:yield 69 coconuts
+		req:500 bananas:earned and independenceDay
+	*mangoTree|mangoTrees
+		name:Mango Tree|Mango Trees
+		desc:Never buy unripe ones from the supermarkets ever again.<//><b>Effect:</b><.>Produces 69 mangoes per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3mango-tree.png
+		cost:69000 water, 18 ambrosia, 36900 apples, 12400 strawberries, 3690 pears, 1800 cherries, 690 pomegranates, 500 grapes, 500 watermelons, 500 lemons, 500 oranges, 500 bananas, 500 coconuts
+		on tick:yield 69 mangoes
+		req:500 coconuts:earned and independenceDay
+	*nectarineTree|nectarineTree
+		name:Nectarine Tree|Nectarine Trees
+		desc:An alternative to elven peaches.<//><b>Effect:</b><.>Produces 69 nectarines per second and some Nectar of the Gods, too.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/3/3nectarine-tree.png
+		cost:1690000 water, 169 ambrosia, 1000000 apples, 100000 strawberries, 69000 pears, 35000 cherries, 24800 pomegranates, 6900 grapes, 1000 watermelons, 500 lemons, 500 oranges, 500 bananas, 500 coconuts, 69 mangoes
+		on tick:yield 69 nectarines
+		on tick:if (have moonWell) yield 0.01 ambrosia
+		req:36 mangoes:earned
+
+Upgrades
+	*TEMPLATE
+		on click:anim glow
+
+//0 - unlocks
+	*basicTools
+		name:Basic Tools
+		desc:The difference between an ape and a human.<//><b>Effect:</b><.>+1 water/click <.>unlocks new upgrades/buildings <.>increses the yield of Fountains by 2
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4basictools.png
+		cost:100 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		req:69 water:earned and (fountain>=1)
+//	*extraHands
+//upgrades Fountain + autoclicks
+
+//upgrades Puddles
+	*bucket0
+		name:Bucket
+		desc:Makes it easier for you to move your water around. Just imagine having to keep on collecting it with your bare hands for the rest of your life.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"But sir, you don't have a rope or a bucket," she said, "and this well is very deep. Where would you get this living water?" - John 4:11</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket00.png
+		cost:75 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:50 water:earned and basicTools and (puddles>=1)
+	*bucket1
+		name:Broken Bucket
+		desc:Better than nothing.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"The bucket is broken." - it is this that occasions evil. - I Ching, XLVIII</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket01broken.png
+		cost:150 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=1)
+	*bucket2
+		name:Rusty Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"You have spent a lot of money, but you haven't much to show for it. You keep filling your plates, but you never get filled up. You keep drinking and drinking and drinking, but you're always thirsty. You put on layer after layer of clothes, but you can't get warm. And the people who work for you, what are they getting out of it? Not much - a leaky, rusted-out bucket, that's what." - Haggai 1:6</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket02rusty.png
+		cost:750 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=1)
+	*bucket3
+		name:Bucket of Drop
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"There's a little boy here who has five barley loaves and two fish. But that's a drop in the bucket for a crowd like this." - John 6:8-11</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket03ofdrop.png
+		cost:7500 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=10)
+	*bucket4
+		name:Capbucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then said the king: 'The woman you see there in chains is my wife; she is called Gul, the Rose, and I am Sinaubar, the Cypress. One day I was hunting and became very thirsty. After great search I discovered a well in a place so secret that neither bird nor beast nor man could find it without labour. I was alone, I took my turban for a rope and my cap for a bucket." - The Brown Fairy Book by Andrew Lang [1904]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket04ofcap.png
+		cost:750000 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=25)
+	*bucket5
+		name:Wooden Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then the Lord spoke to Moses, "Say to Aaron, 'Take your rod and stretch out your hand over the waters of Egypt, over their streams, over their rivers, over their ponds, and over all their pools of water, that they may become blood. And there shall be blood throughout all the land of Egypt, both in buckets of wood and pitchers of stone.' "" - Exodus 7:19</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket05wood.png
+		cost:75000000 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=50)
+	*bucket6
+		name:Bamboo Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"The giant bamboo does not grow in the Andamans, but pieces of it are often drifted ashore, having come from the coast of Burma. The natives pick up these drift-wood bamboos and make buckets of them. It is possible that the bamboo from which the first man was born was just such a piece drifted up from the sea." - Myths and Legends of the Andamans by A.R. Radcliffe Brown [1922]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket06bamboo.png
+		cost:7500000000 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=100)
+	*bucket7
+		name:Bucket of Water
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"He shall pour water from his buckets, And his seed shall be in many waters. His king shall be higher than Agag, And his kingdom shall be exalted." - Numbers 24:7</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket07water.png
+		cost:7.5E+11 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=150)
+	*bucket8
+		name:Big Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then he came back, and went all around to the places where his people had been killed. He picked up an eyelash from each one. "Have you a big bucket?" he asked his grandmother. "Build a fire when it is nearly dawn and heat rocks." All the eyelashes he put into the bucket. Then he turned and lay down with his face to the ground. To his grandmother he said, "Throw the hot rocks in and lie down also." She did so. By and by they heard shouting, "Here's my bow. Here's my place," and so on. All those dead people were alive again. The boy got up and said, "You are my brothers. I told my grandmother that I would come back again when I died. I did so. I caused you dead people to come to life."" - Yana traditional narratives</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket08big.png
+		cost:7.5E+13 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=200)
+	*bucket9
+		name:Biblically-Old Bucket
+		desc:Makes it easier for you to move your water around. Just imagine having to keep on collecting it with your bare hands for the rest of your life. There's even an at least 6 inch nail up the noose. Seems like hammered home with a duckboard or something. It's goddamn biblical, mate.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i> </i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket09biblical.png
+		cost:7.5E+15 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=250)
+	*bucket10
+		name:Leather Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"It occurred once to Narud Jee to go and see how Shree Krishnù Chund carried on his domestic affairs with sixteen thousand one hundred and eight wives, with this thought in his mind, he came to Dwarka, and beheld outside the city high, lofty trees, flourishing, loaded with fruits and flowers, waving in the orchards, on which, pigeons, parrots, peacocks and other birds were sitting, and pouring forth pleasing notes; lotuses were blooming in elegant tanks, on which swarms of bees buzzed; on the banks geese, cranes and other birds were sporting about; in the flower gardens, the gardeners sang sweet strains, and throwing water high and low, saturated the different beds with it; in some places wheels and leather buckets were brought into play, and on the quays there were crowds of women carrying water on their heads: the beauty of whom cannot be described; to be appreciated, it must have been seen." - The Prem Sagur of Lallu Lal</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket10leather.png
+		cost:7.5E+17 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=300)
+	*bucket11
+		name:Brass Bucket
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then he (the monster) set a brass bucket upon the ground, filled it with water, killed his dogs, put them in as they were and built a fire underneath. After the pot had boiled for a long time and they were cooked, he took it off and ate both of them. After he had eaten both he washed the brass bucket, tied it up, and set it on the water. Then he threw the dog bones into the water, shouted to them, and all came to life, and they went on. He took them with him, started off, and disappeared. The man sitting in the tree got down and started along by the shore of the ocean." - Myths and Tales of the Southeastern Indians By John R. Swanton</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket11brass.png
+		cost:7.5E+19 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=350)
+	*bucket12
+		name:Solomon's Bronze Ash-Bucket
+		desc:Despite there not being any gold ones, this isn't even 3rd best one somehow.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"...the ash buckets, the shovels, and the bowls. Huram made all these things of burnished bronze for the Temple of the Lord, just as King Solomon had directed." - Kings 7:45</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket12bronze.png
+		cost:7.5E+21 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=400)
+	*bucket13
+		name:Silver Bucket of the Enchanted Islands
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"In every house," said Gilbert, reading from the manuscript, "they have scoops, buckets, and divers vessels, all of massive silver with which they throw out water and otherwise employ them." - Tales of the Enchanted Islands of the Atlantic by Thomas Wentworth Higginson [1898]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket13silver.png
+		cost:7.5E+23 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=450)
+	*bucket14
+		name:Horn of the Útgarda-Loki
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Next, Útgarda-Loki asked Thor what feats there were which he might desire to show before them: such great tales as men have made of his mighty works. Then Thor answered that he would most willingly undertake to contend with any in drinking. Útgarda-Loki said that might well be; he went into the hall and called his serving-boy, and bade him bring the sconce-horn which the henchmen were wont to drink off. Straightway the serving-lad came forward with the horn and put it into Thor's hand. (..) "Moreover, when thou didst drink from the horn, and it seemed to thee to go slowly, then, by my faith, that was a wonder which I should not have believed possible: the other end of the horn was out in the sea, but thou didst not perceive it. But now, when thou comest to the sea, thou shalt be able to mark what a diminishing thou hast drunk in the sea: this is henceforth called "ebb-tides."" - The Prose Edda of Snorri Sturlson</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket14horn.png
+		cost:7.5E+25 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=500)
+	*bucket15
+		name:The Bucket of God's Goodness
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Open up, heavens, and rain. Clouds, pour out buckets of my goodness! Loosen up, earth, and bloom salvation; sprout right living. I, God, generate all this. - Isaiah 45:8</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket15goodness.png
+		cost:7.5E+27 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 2
+		passive:multiply yield of puddles by 2
+		req:(puddles>=550)
+
+	*spadeTools
+		name:Spades
+		desc:Won't quite let you find a new path to China, but still useful. Also lets you make bigger puddles :D<//><b>Effect:</b><.>+2 water/click <.>unlocks new upgrades/buildings <.>increses the yield of Puddles by 20%
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4digging.png
+		cost:500 water
+		passive:increase water yield of waterButton by 2
+		passive:multiply yield of puddles by 1.2
+		req:250 water:earned and basicTools
+	*faucet
+		name:Faucet
+		desc:Now you don't even need to use your hands to get the water out of the fountain anymore.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains by 4 and Aqueducts by 2.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4faucet.png
+		cost:2500 water
+		passive:increase water yield of waterButton by 1
+		passive:multiply yield of fountain by 4
+		passive:multiply yield of aqueduct by 2
+		req:1000 water:earned
+	*watermill
+		name:Watermill
+		desc:Helps the water to move.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of puddles by 1.2 and ponds by 4.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4water-mill.png
+		cost:25000 water
+		passive:multiply water yield of waterButton by 2
+		passive:multiply yield of puddles by 1.2	
+		passive:multiply yield of pond by 4				
+		req:10000 water:earned and pond
+	*advancedTools
+		name:advancedTools
+		desc:The difference between a man from the Stone Age and the Medieval Age.<//><b>Effect:</b><.>x2 water/click <.>x.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4advtools.png
+		cost:25000 water
+		passive:multiply water yield of waterButton by 2
+		passive:multiply yield of wells by 5				
+		req:10000 water:earned and pond
+	*groundwaterWays
+		name:Discovery of Groundwater
+		desc:Turns out there's a lot on the inside, too.<//><b>Effect:</b><.>+4 water/click, unlocks some upgrades/buildings. <.>increses the yield of Puddles and Ponds 4x and 2x respectively
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4groundwater.png
+		cost:69000 water
+		passive:increase water yield of waterButton by 4
+		passive:multiply yield of puddle by 4
+		passive:multiply yield of pond by 2
+		req:5000 water:earned and spadeTools
+	*shipyard
+		name:Shipyard
+		desc:Helps you move on the water.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of lakes and sea-water distilleries. <.>Unlocks new buildings.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4shipyard.png
+		cost:900000000 water
+		passive:multiply water yield of waterButton by 2
+		passive:multiply yield of lakes by 4	
+		passive:multiply yield of seaWaterDistillery by 2				
+		req:10000000 water:earned and pond
+	*extraIceBerg
+		name:More Icebergs
+		desc:We can't allow the chance for a 2nd Titanic to happen.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of icebergs by 2.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4iceberg1.png
+		cost:6900000000 water
+		passive:multiply yield of icebergs by 2				
+		req:(icebergs>=25)
+	*mountains
+		name:Mountains
+		desc:They were hard to notice with all these trees around.<//><b>Effect:</b><.>unlocks new buildings.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4mountains.png
+		cost:24000000000 water, 25 ambrosia
+		passive:multiply yield of lakes by 2	
+		req:10000000000 water:earned
+	*mountainUpg
+		name:Himalayas
+		desc:Lets you reach for as close to the moon as you could while still being on the ground.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of lakes, waterfalls and icyMountains.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4himalayas.png
+		cost:100000000000 water
+		passive:multiply water yield of waterButton by 2
+		passive:multiply yield of lakes by 4	
+		passive:multiply yield of waterfall by 8				
+		req:(lakes>=100 and waterfalls>=50 and icyMountains>=25)
+	*expertTools
+		name:Expert Tools
+		desc:The difference between an advanced human and a way more advanced human.<//><b>Effect:</b><.>+1024 water/click <.>increses the yield of Fountains, Rain collectors and Aqueducts by 900%, 600% and 300% respectively <.>Unlocks some upgrades/buildings 
+		icon:
+		cost:750000000000 water
+		passive:increase water yield of waterButton by 1024
+		passive:multiply yield of fountain by 9
+		passive:multiply yield of rainCollector by 6
+		passive:multiply yield of aqueduct by 3
+		req:70000000000 water:earned
+
+
+//1 - WATER CLICKS
+
+
+
+//2 - WATER BUILDINGS
+
+
+	*antarctica
+		name:Antarctica
+		desc:The former OG lost continent.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of icebergs, icy mountains and oceans by 2.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4antarctica.png
+		cost:69000 water
+		passive:multiply yield of icebergs by 2	
+		passive:multiply yield of icyMountain by 2
+		passive:multiply yield of ocean by 2			
+		req:(icebergs>=25)
+
+//special
+	*midasTouch
+		name:Budget Midas Touch
+		desc:Doesn't quite turn stuff into gold, but has the power to milk your fountains for something more than mere water.<//><b>Effect:</b><.>5% chance of gaining 1 Nectar of the Gods per fountain click
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4midas-hand.png
+		cost:1 ambrosia
+		req:1 ambrosia:earned
+	*bootsOfHermes
+		name:Boots of Hermes
+		desc:Lets you travel quicker to locations of rain.<//><b>Effect:</b><.>rain appears 30% more often.
+//comment: So that's how gods got all the nectar..
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4hermes.png
+		passive:multiply frequency of rain by 0.7
+		cost:5 ambrosia
+		req:1 ambrosia:earned
+	*experiments
+		name:Dr. Emoto's Water Experiments
+		desc:Clicking the fountain so often that you've forgot how would touching grass feel like made you start talking to the water. Nothing wrong about that, but if you do it, better be nice. Water has feelings too, you know.<//><b>Effect:</b><.>x2 water/click <.>water and fruit production +100%
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4emoto.png
+		cost:6900 water
+		passive:multiply water yield of waterButton by 2
+		passive:multiply yield of water by 2
+		passive:multiply yield of tag:fruit by 2
+		req:3690 water:earned
+	*independenceDay
+		name:Expelling the Jewry
+		desc:It's about time we abolish these unnecessary interest rates and taxes. Only God(s) can judge us now! Though, with all this freedom, also comes new responsibilites.<//><b>Effect:</b><.>unlocks new buildings.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4expell.png
+		cost:25000000 water, 10 ambrosia
+		req:10000000 water:earned
+	*mtOlympus
+		name:Mount Olympus
+		desc:<//><b>Effect:</b><.>unlocks new buildings and upgrades.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4mount-olympus.png
+		cost:360000000000 water, 100 ambrosia
+		req:100000000000 water:earned
+	*underwaterRuins
+		name:Underwater Ruins
+		desc:Something feels fishy about these..<//><b>Effect:</b><.>unlocks new building.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4underwaterruins.png
+		cost:3600000000000 water, 1000 ambrosia
+		req:1000000000000 water:earned
+	*clover
+		name:Clover
+		desc:A delicious herb that tastes lucky.<//><b>Effect:</b><.>rain effects are 4 times more powerful
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4clover.png
+		cost:25 ambrosia
+		req:9 ambrosia:earned
+	*moonWell
+		name:Moonwells
+		desc:Comes with additional elven nymphs. The Wells themselves are filled with ordinary water, though now you might have some idea where does the Nectar come from..<//><b>Effect:</b><.>Schools of Water Magic now produce 1 Nectar of the Gods every 100 seconds
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4moonwell.png
+		cost:100 ambrosia
+		req:50 ambrosia:earned 
+
+//3 - TREES
+	*treeUpgrade0
+		name:Planting
+		desc:Turns out there's something you can use the water for other than just.. getting more water.<//><b>Effect:</b><.>unlocks Trees.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4planting.png
+		cost:690 water
+		req:(puddles>=10 or rainCollectors>=10) and basicTools
+	*treeUpgrade1
+		name:Tree Hugs
+		desc:We need 4 hugs a day for survival. We need 8 hugs a day for maintenance. We need 12 hugs a day for growth.<//>People often ask "How many hugs are you getting each day?", but how many does a tree get?<//>Well, I'm sure there's always some hippies to provide for them, here's your chance to get some too.<//><b>Effect:</b><.>1.5x fruit yield
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4hug.png
+		cost:100 apples
+		passive:multiply yield of tag:fruit by 1.5
+		req:69 apples:earned and experiments
+	*treeUpgrade2
+		name:Pruning
+		desc:Now that you're hands are more free, time to put them to an actual use.<//><b>Effect:</b><.>2x fruit yield
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4pruning.png
+		cost:200 apples, 20 strawberries
+		passive:multiply yield of tag:fruit by 2
+		req:10 strawberry:earned and basicTools
+	*treeUpgrade3
+		name:Gardening Tools
+		desc:Almost forgot that you shouldn't be using only hands in this area as well.<//><b>Effect:</b><.>all fruit yield x2
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4gardening-tools.png
+		cost:500 apples
+		passive:multiply yield of tag:fruit by 2
+		req:appleTrees>=9
+	*treeUpgrade4
+		name:Cuttings
+		desc:Turns out there's actual use from the leftovers of pruning.<//><b>Effect:</b><.>all fruit yield x2<.>additionally increases production of most trees (not palms though)
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4cuttings.png
+		cost:1000 apples, 750 pears, 690 cherries, 500 pomegranates, 69 grapes
+		passive:multiply yield of appleTrees by 5
+		passive:multiply yield of pearTrees by 4
+		passive:multiply yield of pomegranateTrees by 3
+		passive:multiply yield of grapevines by 2
+		passive:multiply yield of tag:fruit by 2
+		req:(appleTrees>=10 or pearTrees>=10 or pomegranateTrees>=10) and basicTools
+
+//4 - SPECIFIC TREES
+	*appletreeUpgrade1
+		name:Blessings of the Death God
+		desc:Makes them extra juicy as well.<//><b>Effect:</b><.>apple yield x4
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/4ryuk.png
+		cost:690 apples
+		passive:multiply yield of apples by 4
+		req:appleTrees>=6
