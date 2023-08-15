@@ -525,83 +525,90 @@ Upgrades
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=1) and basicTools and bucket0
+		req:(puddles>=1) and basicTools and bucket1
 	*bucket3
 		name:Bucket of Drop
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"There's a little boy here who has five barley loaves and two fish. But that's a drop in the bucket for a crowd like this." - John 6:8-11</i>
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2, and of Rain Collectors by 10%.<//><i>"There's a little boy here who has five barley loaves and two fish. But that's a drop in the bucket for a crowd like this." - John 6:8-11</i>
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket03ofdrop.png
 		cost:7500 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=10) and basicTools and bucket0
+		passive:multiply yield of rainCollector by 1.1
+		req:(puddles>=10) and basicTools and bucket2
 	*bucket4
 		name:Capbucket
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then said the king: 'The woman you see there in chains is my wife; she is called Gul, the Rose, and I am Sinaubar, the Cypress. One day I was hunting and became very thirsty. After great search I discovered a well in a place so secret that neither bird nor beast nor man could find it without labour. I was alone, I took my turban for a rope and my cap for a bucket." - The Brown Fairy Book by Andrew Lang [1904]</i>
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2000 (might be a bit of cap).<//><i>"Then said the king: 'The woman you see there in chains is my wife; she is called Gul, the Rose, and I am Sinaubar, the Cypress. One day I was hunting and became very thirsty. After great search I discovered a well in a place so secret that neither bird nor beast nor man could find it without labour. I was alone, I took my turban for a rope and my cap for a bucket." - The Brown Fairy Book by Andrew Lang [1904]</i>
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket04ofcap.png
 		cost:750000 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=25) and basicTools and bucket0
+		req:(puddles>=25) and basicTools and bucket3
 	*bucket5
 		name:Palm-Spathe Bucket
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"A hanging frame-work or tray was filled with the usual three kinds of rice, parched, saffron and washed, an egg, bananas from one comb, pieces of uncooked flesh making up a whole fowl. The blood of the fowls was placed in one of five miniature palm-spathe buckets, two of the other four containing water and two the juice of cane. Five waxen tapers were placed on the tray and lighted to guide the spirits to their meals, and five lighted cigarettes for them were added. The tray was waved slowly above the patient, waved seven times before him, held for him to spit on, and carried out and hung from a tree in the jungle. It is significant that the cooked and uncooked flesh each made up a whole fowl and that all the bananas were plucked from one comb. No meal was taken by those present." - Shaman, Saiva and Sufi: A Study of the Evolution of Malay Magic by R. O. WINSTEDT [1925]</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket04ofcap.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2, and of Rain Collectors by 50%.<//><i>"A hanging frame-work or tray was filled with the usual three kinds of rice, parched, saffron and washed, an egg, bananas from one comb, pieces of uncooked flesh making up a whole fowl. The blood of the fowls was placed in one of five miniature palm-spathe buckets, two of the other four containing water and two the juice of cane. Five waxen tapers were placed on the tray and lighted to guide the spirits to their meals, and five lighted cigarettes for them were added. The tray was waved slowly above the patient, waved seven times before him, held for him to spit on, and carried out and hung from a tree in the jungle. It is significant that the cooked and uncooked flesh each made up a whole fowl and that all the bananas were plucked from one comb. No meal was taken by those present." - Shaman, Saiva and Sufi: A Study of the Evolution of Malay Magic by R. O. WINSTEDT [1925]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket5palmwood.png
 		cost:75000000 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=50) and basicTools and bucket0
+		passive:multiply yield of rainCollector by 1.5
+		req:(puddles>=50) and basicTools and bucket4
 	*bucket6
 		name:Wooden Bucket
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then the Lord spoke to Moses, "Say to Aaron, 'Take your rod and stretch out your hand over the waters of Egypt, over their streams, over their rivers, over their ponds, and over all their pools of water, that they may become blood. And there shall be blood throughout all the land of Egypt, both in buckets of wood and pitchers of stone.' "" - Exodus 7:19</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket05wood.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i>"Then the Lord spoke to Moses, "Say to Aaron, 'Take your rod and stretch out your hand over the waters of Egypt, over their streams, over their rivers, over their ponds, and over all their pools of water, that they may become blood. And there shall be blood throughout all the land of Egypt, both in buckets of wood and pitchers of stone.' "" - Exodus 7:19</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket06wood.png
 		cost:7500000000 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=100)
 	*bucket7
 		name:Bamboo Bucket
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"The giant bamboo does not grow in the Andamans, but pieces of it are often drifted ashore, having come from the coast of Burma. The natives pick up these drift-wood bamboos and make buckets of them. It is possible that the bamboo from which the first man was born was just such a piece drifted up from the sea." - Myths and Legends of the Andamans by A.R. Radcliffe Brown [1922]</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket06bamboo.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i>"The giant bamboo does not grow in the Andamans, but pieces of it are often drifted ashore, having come from the coast of Burma. The natives pick up these drift-wood bamboos and make buckets of them. It is possible that the bamboo from which the first man was born was just such a piece drifted up from the sea." - Myths and Legends of the Andamans by A.R. Radcliffe Brown [1922]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket07bamboo.png
 		cost:7.5E+11 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=150)
 	*bucket8
 		name:Bucket of Water
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"He shall pour water from his buckets, And his seed shall be in many waters. His king shall be higher than Agag, And his kingdom shall be exalted." - Numbers 24:7</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket07water.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i>"He shall pour water from his buckets, And his seed shall be in many waters. His king shall be higher than Agag, And his kingdom shall be exalted." - Numbers 24:7</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket08water.png
 		cost:7.5E+13 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=200)
 	*bucket9
 		name:Big Bucket
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then he came back, and went all around to the places where his people had been killed. He picked up an eyelash from each one. "Have you a big bucket?" he asked his grandmother. "Build a fire when it is nearly dawn and heat rocks." All the eyelashes he put into the bucket. Then he turned and lay down with his face to the ground. To his grandmother he said, "Throw the hot rocks in and lie down also." She did so. By and by they heard shouting, "Here's my bow. Here's my place," and so on. All those dead people were alive again. The boy got up and said, "You are my brothers. I told my grandmother that I would come back again when I died. I did so. I caused you dead people to come to life."" - Yana traditional narratives</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket08big.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i>"Then he came back, and went all around to the places where his people had been killed. He picked up an eyelash from each one. "Have you a big bucket?" he asked his grandmother. "Build a fire when it is nearly dawn and heat rocks." All the eyelashes he put into the bucket. Then he turned and lay down with his face to the ground. To his grandmother he said, "Throw the hot rocks in and lie down also." She did so. By and by they heard shouting, "Here's my bow. Here's my place," and so on. All those dead people were alive again. The boy got up and said, "You are my brothers. I told my grandmother that I would come back again when I died. I did so. I caused you dead people to come to life."" - Yana traditional narratives</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket09big.png
 		cost:7.5E+15 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=250)
 	*bucket10
 		name:Biblically-Old Bucket
-		desc:Makes it easier for you to move your water around. Just imagine having to keep on collecting it with your bare hands for the rest of your life. There's even an at least 6 inch nail up the noose. Seems like hammered home with a duckboard or something. It's goddamn biblical, mate.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i> </i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket09biblical.png
+		desc:Makes it easier for you to move your water around. Just imagine having to keep on collecting it with your bare hands for the rest of your life. There's even an at least 6 inch nail up the noose. Seems like hammered home with a duckboard or something. It's goddamn biblical, mate.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i> </i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket10biblical.png
 		cost:7.5E+17 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=300)
 	*bucket11
 		name:Leather Bucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"It occurred once to Narud Jee to go and see how Shree Krishnù Chund carried on his domestic affairs with sixteen thousand one hundred and eight wives, with this thought in his mind, he came to Dwarka, and beheld outside the city high, lofty trees, flourishing, loaded with fruits and flowers, waving in the orchards, on which, pigeons, parrots, peacocks and other birds were sitting, and pouring forth pleasing notes; lotuses were blooming in elegant tanks, on which swarms of bees buzzed; on the banks geese, cranes and other birds were sporting about; in the flower gardens, the gardeners sang sweet strains, and throwing water high and low, saturated the different beds with it; in some places wheels and leather buckets were brought into play, and on the quays there were crowds of women carrying water on their heads: the beauty of whom cannot be described; to be appreciated, it must have been seen." - The Prem Sagur of Lallu Lal</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket10leather.png
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket11leather.png
 		cost:7.5E+19 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
@@ -610,7 +617,7 @@ Upgrades
 	*bucket12
 		name:Brass Bucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then he (the monster) set a brass bucket upon the ground, filled it with water, killed his dogs, put them in as they were and built a fire underneath. After the pot had boiled for a long time and they were cooked, he took it off and ate both of them. After he had eaten both he washed the brass bucket, tied it up, and set it on the water. Then he threw the dog bones into the water, shouted to them, and all came to life, and they went on. He took them with him, started off, and disappeared. The man sitting in the tree got down and started along by the shore of the ocean." - Myths and Tales of the Southeastern Indians By John R. Swanton</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket11brass.png
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket12brass.png
 		cost:7.5E+21 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
@@ -619,7 +626,7 @@ Upgrades
 	*bucket13
 		name:Solomon's Bronze Ash-Bucket
 		desc:Despite there not being any gold ones, this isn't even 3rd best one somehow.<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"...the ash buckets, the shovels, and the bowls. Huram made all these things of burnished bronze for the Temple of the Lord, just as King Solomon had directed." - Kings 7:45</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket12bronze.png
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket13bronze.png
 		cost:7.5E+23 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
@@ -627,30 +634,37 @@ Upgrades
 		req:(puddles>=450)
 	*bucket14
 		name:Silver Bucket of the Enchanted Islands
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"In every house," said Gilbert, reading from the manuscript, "they have scoops, buckets, and divers vessels, all of massive silver with which they throw out water and otherwise employ them." - Tales of the Enchanted Islands of the Atlantic by Thomas Wentworth Higginson [1898]</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket13silver.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains, Puddles and Rain Collectors by 2.<//><i>"In every house," said Gilbert, reading from the manuscript, "they have scoops, buckets, and divers vessels, all of massive silver with which they throw out water and otherwise employ them." - Tales of the Enchanted Islands of the Atlantic by Thomas Wentworth Higginson [1898]</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket14silver.png
 		cost:7.5E+25 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of rainCollector by 2
 		req:(puddles>=500)
 	*bucket15
 		name:Horn of the Útgarda-Loki
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Next, Útgarda-Loki asked Thor what feats there were which he might desire to show before them: such great tales as men have made of his mighty works. Then Thor answered that he would most willingly undertake to contend with any in drinking. Útgarda-Loki said that might well be; he went into the hall and called his serving-boy, and bade him bring the sconce-horn which the henchmen were wont to drink off. Straightway the serving-lad came forward with the horn and put it into Thor's hand. (..) "Moreover, when thou didst drink from the horn, and it seemed to thee to go slowly, then, by my faith, that was a wonder which I should not have believed possible: the other end of the horn was out in the sea, but thou didst not perceive it. But now, when thou comest to the sea, thou shalt be able to mark what a diminishing thou hast drunk in the sea: this is henceforth called "ebb-tides."" - The Prose Edda of Snorri Sturlson</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket14horn.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Ponds by 4, of Puddles by 2, of Lakes by 8 and of Sea Water Distilleries and Oceans by 16.<//><i>"Next, Útgarda-Loki asked Thor what feats there were which he might desire to show before them: such great tales as men have made of his mighty works. Then Thor answered that he would most willingly undertake to contend with any in drinking. Útgarda-Loki said that might well be; he went into the hall and called his serving-boy, and bade him bring the sconce-horn which the henchmen were wont to drink off. Straightway the serving-lad came forward with the horn and put it into Thor's hand. (..) "Moreover, when thou didst drink from the horn, and it seemed to thee to go slowly, then, by my faith, that was a wonder which I should not have believed possible: the other end of the horn was out in the sea, but thou didst not perceive it. But now, when thou comest to the sea, thou shalt be able to mark what a diminishing thou hast drunk in the sea: this is henceforth called "ebb-tides."" - The Prose Edda of Snorri Sturlson</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket15horn.png
 		cost:7.5E+27 water
 		passive:increase water yield of waterButton by 1
-		passive:multiply yield of fountain by 2
+		passive:multiply yield of fountain by 4
 		passive:multiply yield of puddles by 2
+		passive:multiply yield of pond by 4
+		passive:multiply yield of lake by 8
+		passive:multiply yield of seaWaterDistillery by 16
+		passive:multiply yield of ocean by 16
 		req:(puddles>=550)
 	*bucket16
 		name:The Bucket of God's Goodness
-		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Open up, heavens, and rain. Clouds, pour out buckets of my goodness! Loosen up, earth, and bloom salvation; sprout right living. I, God, generate all this. - Isaiah 45:8</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket15goodness.png
+		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains by 2, of Puddles and Wells by 8 and of Rain Collectors by 32.<//><i>"Open up, heavens, and rain. Clouds, pour out buckets of my goodness! Loosen up, earth, and bloom salvation; sprout right living. I, God, generate all this. - Isaiah 45:8</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket16goodness.png
 		cost:7.5E+29 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
-		passive:multiply yield of puddles by 2
+		passive:multiply yield of puddles by 8
+		passive:multiply yield of well by 8
+		passive:multiply yield of rainCollector by 32
 		req:(puddles>=600)
 
 	*spadeTools
@@ -670,6 +684,7 @@ Upgrades
 		passive:multiply yield of fountain by 4
 		passive:multiply yield of aqueduct by 2
 		req:1000 water:earned
+
 	*watermill
 		name:Watermill
 		desc:Helps the water to move.<//><b>Effect:</b><.>x2 water/click <.>increses the yield of puddles by 1.2 and ponds by 4.
