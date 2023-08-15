@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Freaky Planters
 	by:heisendolf
-	desc:Grow stronger with the help of various different fruit of the world and defeat the Big Food! <//>The plan: Water acquisition -> Buildings that let you get more water -> Grow fruit trees that yield different fruit -> Hire warriors and feed them fruit to make them strong enough to beat subhumans that hypnotize people into feeding themselves junkfood till their grave! >:C
+	desc:Grow stronger with the help of various different fruit of the world and defeat the Big Food! <//> The plan: Water acquisition -> Buildings that let you get more water -> Grow fruit trees that yield different fruit -> Hire warriors and feed them fruit to make them strong enough to beat subhumans that hypnotize people into feeding themselves junkfood till their grave! >:C
 	created:09/08/2023
 	updated:11/08/2023
 	version:0.0.0.1
@@ -512,7 +512,7 @@ Upgrades
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=1) and basicTools
+		req:(puddles>=1) and basicTools and bucket0
 	*bucket2
 		name:Rusty Bucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"You have spent a lot of money, but you haven't much to show for it. You keep filling your plates, but you never get filled up. You keep drinking and drinking and drinking, but you're always thirsty. You put on layer after layer of clothes, but you can't get warm. And the people who work for you, what are they getting out of it? Not much - a leaky, rusted-out bucket, that's what." - Haggai 1:6</i>
@@ -521,7 +521,7 @@ Upgrades
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=1) and basicTools
+		req:(puddles>=1) and basicTools and bucket0
 	*bucket3
 		name:Bucket of Drop
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"There's a little boy here who has five barley loaves and two fish. But that's a drop in the bucket for a crowd like this." - John 6:8-11</i>
@@ -530,7 +530,7 @@ Upgrades
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=10) and basicTools
+		req:(puddles>=10) and basicTools and bucket0
 	*bucket4
 		name:Capbucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then said the king: 'The woman you see there in chains is my wife; she is called Gul, the Rose, and I am Sinaubar, the Cypress. One day I was hunting and became very thirsty. After great search I discovered a well in a place so secret that neither bird nor beast nor man could find it without labour. I was alone, I took my turban for a rope and my cap for a bucket." - The Brown Fairy Book by Andrew Lang [1904]</i>
@@ -539,7 +539,7 @@ Upgrades
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
 		passive:multiply yield of puddles by 2
-		req:(puddles>=25) and basicTools
+		req:(puddles>=25) and basicTools and bucket0
 	*bucket5
 		name:Wooden Bucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2.<//><i>"Then the Lord spoke to Moses, "Say to Aaron, 'Take your rod and stretch out your hand over the waters of Egypt, over their streams, over their rivers, over their ponds, and over all their pools of water, that they may become blood. And there shall be blood throughout all the land of Egypt, both in buckets of wood and pitchers of stone.' "" - Exodus 7:19</i>
