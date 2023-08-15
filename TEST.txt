@@ -7,8 +7,8 @@ Let's make a game!
 	version:0.0.0.1
 
 //KYS WHO EVER WORKS AT PASTEBIN
-//GC WHOEVER WORKS AT GITHUB SUBHUAM NWHIORE CANVCER DOGS
-//INHUMANE LOWBOB TRASHBAG BIOGARBAGES KYS
+//GET C WHO EVER WORKS AT GITHUB U INCOMPETENT CRIPPLES
+
 
 //Things yet to add:
 //how to show current yield from a specific building
@@ -347,7 +347,7 @@ Buildings
 		name:Waterfall|Waterfalls
 		desc:Better than the tubes in the aquaparks.<//><b>Effect:</b><.>Produces 10000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2waterfall.png
-		cost:1.0E+12 water
+		cost:1000000000000 water
 		on tick:yield 10000000 water
 		req:1.0E+12 water:earned and mountains
 	*seaWaterDistillery|seaWaterDistilleries
