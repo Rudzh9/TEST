@@ -349,7 +349,7 @@ Buildings
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2waterfall.png
 		cost:1000000000000 water
 		on tick:yield 10000000 water
-		req:1.0E+12 water:earned and mountains
+		req:1000000000000 water:earned and mountains
 	*seaWaterDistillery|seaWaterDistilleries
 		name:Sea Water Distillery|Sea Water Distilleries
 //can produce also salt/deuterium
