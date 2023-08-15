@@ -347,9 +347,9 @@ Buildings
 		name:Waterfall|Waterfalls
 		desc:Better than the tubes in the aquaparks.<//><b>Effect:</b><.>Produces 10000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2waterfall.png
-		cost:1E+12 water
+		cost:1.0E+12 water
 		on tick:yield 10000000 water
-		req:1E+12 water:earned and mountains
+		req:1.0E+12 water:earned and mountains
 	*seaWaterDistillery|seaWaterDistilleries
 		name:Sea Water Distillery|Sea Water Distilleries
 //can produce also salt/deuterium
@@ -373,7 +373,6 @@ Buildings
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2geyser.png
 		cost:2.1E+15 water
 		on tick:yield 2900000000 water
-//yield ice
 		req:2.1E+15 water:earned
 	*icyMountain|icyMountains
 		name:Icy Mountain|Icy Mountains
