@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Freaky Planters
 	by:heisendolf
-	desc:Grow stronger with the help of various different fruit of the world and defeat the Big Food! <//> The plan: Water acquisition -> Buildings that let you get more water -> Grow fruit trees that yield different fruit -> Hire warriors and feed them fruit to make them strong enough to beat subhumans that hypnotize people into feeding themselves junkfood till their grave! >:C
+	desc:Grow stronger with the help of various different fruit of the world and defeat the Big Food! <//>The plan: Water acquisition -> Buildings that let you get more water -> Grow fruit trees that yield different fruit -> Hire warriors and feed them fruit to make them strong enough to beat subhumans that hypnotize people into feeding themselves junkfood till their grave! >:C
 	created:09/08/2023
 	updated:11/08/2023
 	version:0.0.0.1
