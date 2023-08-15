@@ -290,7 +290,7 @@ Buildings
 	*aqueduct|aqueducts
 		name:Aqueduct|Aqueducts
 		desc:A real-life dot-connector of all of your fountains and other estates. Technically doesn't make you more water in and of itself but by allowing it to be more efficiently transported, allows your other buildings work more without overflowing so often.<//><b>Effect:</b><.>Produces 8 water per second.
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2pipes.png
+		icon:
 		cost:1100 water
 		on tick:yield 8 water
 		req:699 water:earned and spadeTools
@@ -301,86 +301,129 @@ Buildings
 		cost:12000 water
 		on tick:yield 48 water
 		req:6969 water:earned
-	*well|wells
-		name:Well|Wells
-		desc:Be careful to not ruin your pipes when making these.<//><b>Effect:</b><.>Produces 269 water per second.
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2well.png
+	*oasis
+		name:Oasis
+		desc:<//><b>Effect:</b><.>Produces 269 water per second.<//><i>You pour out rain in buckets, O God; thorn and cactus become an oasis. - Psalm 68:9</i>
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2oasis.png
 		cost:130000 water
 		on tick:yield 269 water
-		req:69696 water:earned and groundwaterWays
-	*lake|lakes
-		name:Lake|Lakes
-		desc:Well, it doesn't have sharks in it..<//><b>Effect:</b><.>Produces 1368 water per second.
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2lake.png
+		req:69696 water:earned
+	*well|wells
+		name:Well|Wells
+		desc:x<//><b>Effect:</b><.>Produces 1368 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2well.png
 		cost:1400000 water
 		on tick:yield 1368 water
-		req:696969 water:earned and independenceDay
-	*groundwater|Groundwater
-		name:Groundwater|Groundwater
-		desc:Wait, I thought there's Lava underneath the crust?<//><b>Effect:</b><.>Produces 7800 water per second.
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2groundwater.png
+		req:696969 water:earned and groundwaterWays
+	*lake|lakes
+		name:Lake|Lakes
+		desc:Well, it doesn't have sharks in it..<//><b>Effect:</b><.>Produces 7800 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2lake.png
 		cost:20000000 water
 		on tick:yield 7800 water
+		req:1331100 water:earned and independenceDay
+	*river|rivers
+		name:Lake|Lakes
+		desc:<//><b>Effect:</b><.>Produces 44100 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2river.png
+		cost:330000000 water
+		on tick:yield 44100 water
+		req:100000000 water:earned and independenceDay
+	*mountainSpring|mountainSprings
+		name:Mountain Spring|Mountain Springs
+		desc:<//><b>Effect:</b><.>Produces 270000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2mountainsprings.png
+		cost:5100000000 water
+		on tick:yield 270000 water
+		req:1000000000 water:earned and mountains
+	*groundwater|Groundwater
+		name:Groundwater|Groundwater
+		desc:Wait, I thought there's Lava underneath the crust?<//><b>Effect:</b><.>Produces 1800000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2groundwater.png
+		cost:75000000000 water
+		on tick:yield 1800000 water
 		req:1331100 water:earned and groundwaterWays
 	*waterfall|waterfalls
 		name:Waterfall|Waterfalls
-		desc:Better than the tubes in the aquaparks.<//><b>Effect:</b><.>Produces 44100 water per second.
+		desc:Better than the tubes in the aquaparks.<//><b>Effect:</b><.>Produces 10000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2waterfall.png
-		cost:330000000 water
-		on tick:yield 44100 water
-		req:248000000 water:earned and independenceDay
+		cost:1E+12 water
+		on tick:yield 10000000 water
+		req:1E+12 water:earned and mountains
 	*seaWaterDistillery|seaWaterDistilleries
 		name:Sea Water Distillery|Sea Water Distilleries
 //can produce also salt/deuterium
-		desc:Don't let Nestle know about this.<//><b>Effect:</b><.>Produces 270000 water per second.
+		desc:Don't let Nestle know about this.<//><b>Effect:</b><.>Produces 65000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2distillatory.png
-		cost:5100000000 water
-		on tick:yield 270000 water
+		cost:1.4E+13 water
+		on tick:yield 65000000 water
 		on tick:yield 1 deuterium
-		req:690000000 water:earned and independenceDay
+		req:1.4E+13 water:earned and independenceDay
 	*iceberg|icebergs
 		name:Iceberg|Icebergs
-		desc:Didn't we expell them already? Oh, it's Iceberg, not Ice(((berg)))..<//><b>Effect:</b><.>Produces 1800000 water per second.
+		desc:Didn't we expell them already? Oh, it's Iceberg, not Ice(((berg)))..<//><b>Effect:</b><.>Produces 430000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2iceberg.png
-		cost:75000000000 water
-		on tick:yield 1800000 water
+		cost:1.7E+14 water
+		on tick:yield 430000000 water
 //yield ice
-		req:2480000000 water:earned and shipyard
+		req:1.7E+14 water:earned and shipyard
+	*geyser|geysers
+		name:Geyser|Geysers
+		desc:<//><b>Effect:</b><.>Produces 2900000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2geyser.png
+		cost:2.1E+15 water
+		on tick:yield 2900000000 water
+//yield ice
+		req:2.1E+15 water:earned
 	*icyMountain|icyMountains
 		name:Icy Mountain|Icy Mountains
-		desc:Turns out we never needed to dig anywhere. It's right there on the top.<//><b>Effect:</b><.>Produces 10000000 water per second.
+		desc:Turns out we never needed to dig anywhere. It's always been right there on the top.<//><b>Effect:</b><.>Produces 21000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2icymountains.png
-		cost:1000000000000 water
-		on tick:yield 10000000 water
-		req:24800000000 water:earned and mountains
+		cost:2.6E+16 water
+		on tick:yield 21000000000 water
+		req:2.6E+16 water:earned and mountains
 	*waterMine|waterMines
 		name:Water Mine|Water Mines
-		desc:Not as rich as the ones of Moria.<//><b>Effect:</b><.>Produces 65000000 water per second.
+		desc:Not as rich as the ones of Moria.<//><b>Effect:</b><.>Produces 150000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2water-mines.png
-		cost:14000000000000 water
-		on tick:yield 65000000 water
-		req:1000000000000 water:earned and expertTools
+		cost:3.1E+17 water
+		on tick:yield 150000000000 water
+		req:3.1E+17 water:earned and expertTools
 	*ocean|oceans
 		name:Ocean|Oceans
-		desc:Turns out Seas have parents too.<//><b>Effect:</b><.>Produces 430000000 water per second.
+		desc:Turns out Seas have parents too.<//><b>Effect:</b><.>Produces 1100000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2ocean.png
-		cost:170000000000000 water
-		on tick:yield 430000000 water
-		req:2480000000000 water:earned and shipyard
+		cost:7.1E+19 water
+		on tick:yield 1100000000000 water
+		req:7.1E+19 water:earned and shipyard
 	*schoolOfWaterMagic|schoolsOfWaterMagic
 		name:School of Water Magic|Schools of Water Magic
-		desc:What better of a way can there be to obtain water than being able to call it forth at will?<//><b>Effect:</b><.>Produces 2900000000 water per second.
+		desc:What better of a way can there be to obtain water than being able to call it forth at will?<//><b>Effect:</b><.>Produces 8300000000000 water per second.
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2schoolofwatermagic.png
-		cost:2100000000000000 water, 18 ambrosia
-		on tick:yield 2900000000 water
+		cost:1.2E+21 water, 18 ambrosia
+		on tick:yield 8300000000000 water
 		on tick:if (have moonWell) yield 1 ambrosia
-		req:24800000000000 water:earned and moonWell
+		req:1.2E+21 water:earned
+	*comet|comets
+		name:Comet|Comets
+		desc:<//><b>Effect:</b><.>Produces 64000000000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2comet.png
+		cost:1,9E+23 water
+		on tick:yield 64000000000000 water
+		req:1,9E+23 water:earned
+	*tears
+		name:Tears
+		desc:<//><b>Effect:</b><.>Produces 510000000000000 water per second.
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2tears.png
+		cost:5.4E+25
+		on tick:yield 510000000000000 water
+		req:5.4E+25 water:earned
 	*atlantis
 		name:Atlantis
 		text:Atlantis ([this]%)
 		desc:The city of our collective ancestors. Little is known about it nowadays, but one thing's for sure - there's water everywhere! <//><b>The Atlantis is [this]% complete.</b>
 		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/2/2atlantis.png
-		cost:26000000000000000 water, 1000 ambrosia
+		cost:9.0E+27 water, 1000 ambrosia
 		req:2480000000000000 water:earned and underwaterRuins
 		limit:100
 		cost increase:105%
@@ -548,7 +591,7 @@ Upgrades
 	*bucket5
 		name:Palm-Spathe Bucket
 		desc:<//><b>Effect:</b><.>+1 water/click and increses the yield of Fountains and Puddles by 2, and of Rain Collectors by 50%.<//><i>"A hanging frame-work or tray was filled with the usual three kinds of rice, parched, saffron and washed, an egg, bananas from one comb, pieces of uncooked flesh making up a whole fowl. The blood of the fowls was placed in one of five miniature palm-spathe buckets, two of the other four containing water and two the juice of cane. Five waxen tapers were placed on the tray and lighted to guide the spirits to their meals, and five lighted cigarettes for them were added. The tray was waved slowly above the patient, waved seven times before him, held for him to spit on, and carried out and hung from a tree in the jungle. It is significant that the cooked and uncooked flesh each made up a whole fowl and that all the bananas were plucked from one comb. No meal was taken by those present." - Shaman, Saiva and Sufi: A Study of the Evolution of Malay Magic by R. O. WINSTEDT [1925]</i>
-		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket5palmwood.png
+		icon:https://file.garden/ZM6lZi0EPHK4dltZ/Freaky%20Planters/0.0.0.1/4/1/bucket05palmwood.png
 		cost:75000000 water
 		passive:increase water yield of waterButton by 1
 		passive:multiply yield of fountain by 2
